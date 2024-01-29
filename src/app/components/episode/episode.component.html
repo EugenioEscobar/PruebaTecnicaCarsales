@@ -1,1 +1,36 @@
-<p>episode works!</p>
+<div class="bg-gray-900 text-white">
+
+    <div class="container mx-auto px-4 py-8">
+
+        <h1 class="text-3xl font-bold mb-4">Episode {{n_episodio}} - {{episode.name}}</h1>
+
+        <!-- Contenido del episodio -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Detalles del episodio -->
+            <div class="col-span-2 lg:col-span-3 bg-gray-800 rounded-lg overflow-hidden">
+                <div class="p-4">
+                    <h2 class="text-xl font-bold mb-2">Episode Details</h2>
+                    <p class="mb-2"><strong>Name:</strong> {{episode.name}}</p>
+                    <p class="mb-2"><strong>Episode Number:</strong> {{episode.episode}}</p>
+                    <p class="mb-2"><strong>Season:</strong> {{temporada}}</p>
+                    <p class="mb-2"><strong>Air Date:</strong> {{episode.air_date}}</p>
+                </div>
+            </div>
+
+        </div>
+
+        <h2 class="text-3xl font-bold mb-4 m-8">Characters</h2>
+        <div class="grid grid-cols-5 gap-4 overflow-y-auto max-h-[400px] px-4">
+            @for (character of characters; track $index) {
+            <div class="bg-gray-800 rounded-lg overflow-hidden block">
+                <div class="h-64 overflow-hidden">
+                    <img src="{{character.image}}" alt="Personaje 1" class="object-cover w-full h-full">
+                </div>
+                <div class="p-4">
+                    <h2 class="text-lg font-bold mb-2">{{character.name}}</h2>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
